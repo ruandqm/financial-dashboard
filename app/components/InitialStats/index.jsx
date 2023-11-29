@@ -1,18 +1,20 @@
 import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
 import { CursorArrowRaysIcon, EnvelopeOpenIcon, UsersIcon } from '@heroicons/react/24/outline'
 
-const stats = [
-    { id: 1, name: 'Receita Líquida', stat: '71,897', icon: UsersIcon, change: '122', changeType: 'increase' },
-    { id: 2, name: 'Custo de Produtos', stat: '58.16%', icon: EnvelopeOpenIcon, change: '5.4%', changeType: 'increase' },
-    { id: 3, name: 'Marketing', stat: '24.57%', icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
-    { id: 4, name: 'Taxa e Impostos', stat: '24.57%', icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' }
-]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function InitialStats() {
+export default function InitialStats({ data }) {
+    console.log(data[0].receitaLiquida)
+    const stats = [
+        { id: 1, name: 'Receita Líquida', stat: data[0].receitaLiquida, icon: UsersIcon, change: '122', changeType: 'increase' },
+        { id: 2, name: 'Custo de Produtos', stat: data[0].custoDeProdutos, icon: EnvelopeOpenIcon, change: '5.4%', changeType: 'increase' },
+        { id: 3, name: 'Marketing', stat: data[0].Marketing, icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
+        { id: 4, name: 'Taxa e Impostos', stat: data[0].taxaEImpostos, icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' }
+    ]
+
     return (
         <div>
             <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -28,7 +30,7 @@ export default function InitialStats() {
                             <p className="ml-16 truncate text-sm font-medium text-gray-500">{item.name}</p>
                         </dt>
                         <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
-                            <p className="text-2xl font-semibold text-gray-900">{item.stat}</p>
+                            <p className="text-2xl font-semibold text-gray-900">{`R$ ${item.stat}`}</p>
                             <p
                                 className={classNames(
                                     item.changeType === 'increase' ? 'text-green-600' : 'text-red-600',
