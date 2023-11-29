@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        url: 'http://localhost:3000',
+        NEXT_PUBLIC_VERCEL_URL: 'http://localhost:3000',
     }
 }
 
