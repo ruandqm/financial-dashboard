@@ -8,7 +8,7 @@ export default function FinancialChart() {
 
             <Chart />
 
-            <article className="flex flex-col justify-center items-center text-center">
+            <article className="flex flex-col justify-center items-center text-center mb-3">
                 <p className="text-lg font-semibold text-gray-900">R$ 200.000,00</p>
 
                 <p className="text-sm font-medium text-gray-500">Receita Bruta</p>

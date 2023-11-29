@@ -4,7 +4,7 @@ import Toggle from "./Toggle"
 
 export default function NetProfit() {
     return (
-        <section className="flex w-1/2 flex-col h-fit justify-around relative rounded-lg bg-white mt-5 pt-5 shadow sm:pt-6">
+        <section className="flex lg:w-1/2 flex-col h-fit justify-around relative rounded-lg bg-white mt-5 pt-5 shadow sm:pt-6">
             <h2 className="text-lg font-semibold absolute top-5 left-5 text-start">Lucro Líquido</h2>
 
             <div className="flex justify-between items-center my-4 px-5">
