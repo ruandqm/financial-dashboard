@@ -7,12 +7,12 @@ function classNames(...classes) {
 }
 
 export default function InitialStats({ data }) {
-    console.log(data[0].receitaLiquida)
+    console.log(data.receitaLiquida)
     const stats = [
-        { id: 1, name: 'Receita Líquida', stat: data[0].receitaLiquida, icon: UsersIcon, change: '122', changeType: 'increase' },
-        { id: 2, name: 'Custo de Produtos', stat: data[0].custoDeProdutos, icon: EnvelopeOpenIcon, change: '5.4%', changeType: 'increase' },
-        { id: 3, name: 'Marketing', stat: data[0].marketing, icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
-        { id: 4, name: 'Taxa e Impostos', stat: data[0].taxaEImpostos, icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' }
+        { id: 1, name: 'Receita Líquida', stat: data.receitaLiquida, icon: UsersIcon, change: '122', changeType: 'increase' },
+        { id: 2, name: 'Custo de Produtos', stat: data?.custoDeProdutos, icon: EnvelopeOpenIcon, change: '5.4%', changeType: 'increase' },
+        { id: 3, name: 'Marketing', stat: data?.marketing, icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
+        { id: 4, name: 'Taxa e Impostos', stat: data?.taxaEImpostos, icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' }
     ]
 
     return (
